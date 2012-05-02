@@ -11,7 +11,7 @@ $(document).ready ->
 		collapsible: true
 
    	# UI
-	$("button").button();
+	# $("button").button();
 	$(".stats").progressbar value: 0
 	$( "#sex" ).buttonset();
 
@@ -36,9 +36,10 @@ socket.socket.on('error', (reason) ->
 # CPR number found
 socket.on('correctCpr', (data) ->
 	addToProgressbar()
-	console.log("Correct: " + data.cpr);
+	console.log("Correct: " + data);
 
-	$("#correctCpr").append(data.cpr + ' ').effect('highlight', {color: '#E78F08'});	
+	$("#correctCpr").append(data.cpr + ' ').effect('highlight', {color: '#E78F08'});
+	$("#loading").hide()
 );
 
 # CPR number invalid
@@ -107,6 +108,7 @@ addToProgressbar = ->
 	$( ".stats.completed" ).progressbar( "option", "value", (countCompleted/countCprList()*100) );
 
 setInputData = ->
+	$("#loading").show()
 	dob = $("input[name=dob]").val()
 	firstName = $("input[name=firstName]").val()
 	lastName = $("input[name=lastName]").val()

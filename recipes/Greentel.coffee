@@ -33,7 +33,7 @@ class @Greentel extends Recipe
 			callback(cpr, "error", "Could not get response")
 			return false		
 		
-		if res.body.indexOf("#address") > -1
+		if res.body? and res.body.indexOf("#address") > -1
 		  callback cpr, "success", ""
 		else
 		  callback cpr, "error", res.body

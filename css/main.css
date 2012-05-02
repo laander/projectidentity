@@ -1,62 +1,144 @@
-.ui-progressbar-value { background-image: url(../images/pbar-ani.gif); }
+/* Custom fonts */
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Ubuntu Mono Bold'), local('UbuntuMono-Bold'), url('http://themes.googleusercontent.com/static/fonts/ubuntumono/v3/ceqTZGKHipo8pJj4molythbnBKKEOwRKgsHDreGcocg.woff') format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url('http://themes.googleusercontent.com/static/fonts/ubuntumono/v3/ViZhet7Ak-LRXZMXzuAfkbrIa-7acMAeDBVuclsi6Gc.woff') format('woff');
+}
 
+/* General styling and stuff */
 *, body {
 	font-family: Helvetica, sans-serif;
 	font-size: 13px;
 }
 
 body {
-	background: #222;
-	background-image: url('../images/bg.jpg'); 
-	background-repeat: repeat;
+	background: #000;
+	background-image: url('../images/main-bg.png'); 
+	background-repeat: no-repeat;
+	background-position: top center;
 }
 
+.line {
+	border-bottom: 1px dotted #333;
+	height: 1px;
+	width: 100%;
+	margin: 20px 0;
+	clear: both;
+}
+
+/* Specific elements coming up */
 #wrapper {
 	width: 500px;
-	margin: 0 auto;
+	margin: 20px auto;
 	padding: 20px;
 	border-radius: 3px;
-	background: #fff;
-}
-
-h1 {
-	width: 500px;
-	margin: 20px auto;
-	display: block;
-	font-family: 'Special Elite', cursive;
-	font-size: 60px;
+	background: transparent;
 	color: white;
-	text-align:center;
 }
 
-h2 {
-	border-bottom: 1px dotted #CCC;
-	padding-bottom: 20px; 
-	color: orange;
-}
+	h1 {
+		width: 500px;
+		margin: 0px auto;
+		display: block;
+		font-family: 'Ubuntu Mono', sans-serif;
+		font-size: 32px;
+		text-transform: uppercase;
+		color: #09C855;
+		text-align: center;
+	}
 
-.form-label {
-	float: left;
-	width: 100px;
-	padding: 5px 0;
-}
-input {
-	border:1px solid #CCC;
-	border-radius: 3px;
-	padding: 5px;
-}
+	h2 {
+		padding-bottom: 20px; 
+		color: white;
+		font-family: 'Ubuntu Mono', sans-serif;
+		font-weight: normal;
+		text-align: center;
+		font-size: 15px;
+	}
 
-#correct-cpr .title {
-	color: green;
-}
+	.form-label {
+		float: left;
+		width: 100px;
+		padding: 5px 0;
+	}
+	input {
+		border:1px solid #CCC;
+		border-radius: 3px;
+		padding: 5px;
+	}
 
-.ui-progressbar-value { 
-	background-image: url(../images/pbar-ani.gif); 
-}
+	button#findValidNumbers {
+		float: right;
+		margin: 30px 60px 0 0;
+		font-size: 15px;
+		color: #ffffff;
+		padding: 10px 23px;
+		background: -moz-linear-gradient(
+			top,
+			#ff2819 0%,
+			#ab0000);
+		background: -webkit-gradient(
+			linear, left top, left bottom, 
+			from(#ff2819),
+			to(#ab0000));
+		border-radius: 4px;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border: 0px solid #7d0000;
+		-moz-box-shadow:
+			0px 1px 3px rgba(000,000,000,0.5),
+			inset 0px 0px 2px rgba(255,255,255,0.7);
+		-webkit-box-shadow:
+			0px 1px 3px rgba(000,000,000,0.5),
+			inset 0px 0px 2px rgba(255,255,255,0.7);
+		text-shadow:
+			0px -1px 0px rgba(000,000,000,0.4),
+			0px 1px 0px rgba(000,000,000,0.6);
+		cursor: pointer;
+	}
+	button#findValidNumbers:hover {
+		background: -moz-linear-gradient(
+			top,
+			#ab0000 0%,
+			#7d0000);
+		background: -webkit-gradient(
+			linear, left top, left bottom, 
+			from(#ab0000),
+			to(#7d0000));
+	}
 
-#affilitates {
-	margin-top: 20px;
-	padding-top: 20px;
-	border-top: 1px dotted #CCC;
-	color: #CCC;
-}
+	.stats {
+		width: 90%;
+		float:left;
+	}
+
+	#loading {
+		float: right;
+		display: none;
+	}
+
+	/* .ui-progressbar-value { background-image: url(../images/pbar-ani.gif); } */
+
+	#correct-cpr .title {
+	}
+
+	#correctCpr {
+		color: #09C855;
+	}
+
+	.accordion {
+		display: none;
+	}
+
+	#affilitates {
+		font-family: 'Ubuntu Mono', sans-serif;
+		color: #444;
+		text-align: center;
+	}

@@ -6,42 +6,54 @@
 		<script type="text/javascript" charset="UTF-8" src="js/Calc.js"></script>
 		<script type="text/javascript" charset="UTF-8" src="js/screen.js"></script>
 		
-		<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.19.custom.css">		
+		<link rel="stylesheet" href="css/smoothness/jquery-ui-1.8.20.custom.css">		
 		<link rel="stylesheet" href="css/main.css">				
 		<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+		<title>Project Identity | Konscript</title>
 	<head>
 	<body>
 
-		<h1>Project Identity</h1>
 		<div id="wrapper">
+
+			<h1>project identity</h1>
 
 			<h2>Experimental CPR brute-force tool</h2>
 
-			<div id="fb-root"></div>
+			<div class="line"></div>
+
+			<button type="submit" id="findValidNumbers">Find CPR</button>
+
 			<div class="form-label">Fornavn:</div> <input type="text" name="firstName" value="Søren"><br>
 			<div class="form-label">Efternavn:</div> <input type="text" name="lastName"><br>
 			<div class="form-label">Fødselsdato:</div> <input type="text" name="dob" value="010189"><br>
 
 			<input type="radio" name="gender" value="male" checked="checked" /> Mand <br />
 			<input type="radio" name="gender" value="female" /> Kvinde <br>
-			<button type="submit" id="findValidNumbers">Find CPR</button></br>
 			
+			<div class="line"></div>
+
 			<p>Udførte forespørgelser:</p>
 			<div class="stats completed"></div>
+			<div id="loading"><img src="images/ajax-loader.gif" /></div>
+			<br /><br />
 			<!--
 			<p>Fejlopslag:</p>
 			<div id="failedCpr"></div>		
 			-->
+
+			<div class="line"></div>
 
 			<div id="correct-cpr">
 				<span class="title">Korrekt CPR:</span>
 				<span id="correctCpr"></span>
 			</div>
 
+			<div class="line"></div>
+
 			<div id="affilitates">
-				Søren Louv-Jansen & Lasse Boisen Andersen<br />
-				Konscript - Købstaden - ITU Innovators
+				Søren Louv-Jansen & Lasse Boisen Andersen [Konscript]
 			</div>
 
 			<div class="accordion">
