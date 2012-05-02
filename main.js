@@ -1,12 +1,12 @@
 (function() {
   var Recipe, app, express, io;
-  Recipe = require("./recipes/Greentel.js");
+  Recipe = require("./recipes/Lebara.js");
   express = require("express");
   app = express.createServer();
   app.listen(3000);
   io = require("socket.io").listen(app);
   io.set('log level', 0);
-  GLOBAL.debug_mode = true;
+  GLOBAL.debug_mode = false;
   app.use(express.bodyParser());
   app.get("/*.html", function(req, res) {
     return res.sendfile(__dirname + "/pages/" + req.url);
@@ -33,7 +33,9 @@
         return new Recipe(data.inputData, socket, data.session_cookie);
       } else {
         recipe = new Recipe(data.inputData, socket);
-        return recipe.bruteForce();
+        return recipe.prepareRequest(function() {
+          return recipe.bruteForce();
+        });
       }
     });
   });
